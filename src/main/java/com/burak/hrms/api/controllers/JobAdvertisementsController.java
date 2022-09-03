@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/jobAdvertisements")
+@CrossOrigin
 public class JobAdvertisementsController {
 
     private JobAdvertisementService jobAdvertisementService;
@@ -43,6 +44,11 @@ public class JobAdvertisementsController {
     @GetMapping("/getByCityId")
     public DataResult<List<JobAdvertisement>> getByCityId(@RequestParam int cityId) {
         return jobAdvertisementService.getByCityId(cityId);
+    }
+
+    @GetMapping("/getById")
+    public DataResult<JobAdvertisement> getById(@RequestParam int id) {
+        return jobAdvertisementService.getById(id);
     }
 
     @GetMapping("/getByCityId2")

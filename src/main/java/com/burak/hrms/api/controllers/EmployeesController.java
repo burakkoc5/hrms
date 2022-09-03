@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/employees")
+@CrossOrigin
 public class EmployeesController {
 
     private EmployeeService employeeService;
@@ -28,5 +29,16 @@ public class EmployeesController {
     @PostMapping("/add")
     public Result add(@RequestBody Employee employee){
         return employeeService.add(employee);
+    }
+
+
+    @GetMapping("/getByMail")
+    public DataResult<Employee> getByMail(@RequestParam String mail){
+        return employeeService.getByMail(mail);
+    }
+
+    @GetMapping("/getById")
+    public DataResult<Employee> getById(@RequestParam int id){
+        return employeeService.getById(id);
     }
 }

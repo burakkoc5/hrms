@@ -32,4 +32,14 @@ public class EmployeeManager implements EmployeeService {
         employeeDao.save(employee);
         return new SuccessResult("işlem başarılı");
     }
+
+    @Override
+    public DataResult<Employee> getByMail(String mail) {
+        return new SuccessDataResult<Employee>(employeeDao.getEmployeeByMail(mail),"Aday bulundu.");
+    }
+
+    @Override
+    public DataResult<Employee> getById(int id) {
+        return new SuccessDataResult<Employee>(employeeDao.getEmployeeById(id),"Aday bulundu.");
+    }
 }

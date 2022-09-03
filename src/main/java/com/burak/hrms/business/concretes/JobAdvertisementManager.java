@@ -51,7 +51,7 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 
     @Override
     public DataResult<JobAdvertisement> getById(int id) {
-        return new SuccessDataResult<JobAdvertisement>(jobAdvertisementDao.getById(id),"İş ilanı getirildi.");
+        return new SuccessDataResult<JobAdvertisement>(jobAdvertisementDao.getJobAdvertisementById(id),"İş ilanı getirildi.");
     }
     @Override
     public DataResult<List<JobAdvertisement>> getByCityId(int cityId) {

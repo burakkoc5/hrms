@@ -10,4 +10,7 @@ public interface EmployerService {
     public DataResult<List<Employer>> getAll();
 
     public Result add(Employer employer);
+    public DataResult<Employer> getByMail(String mail);
+    public DataResult<Employer> getById(int id);
+
 }

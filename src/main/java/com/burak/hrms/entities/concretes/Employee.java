@@ -27,5 +27,5 @@ public class Employee extends User{
     private String tckNumber;
 
     @Column(name="birth_date")
-    private LocalDate birth_date;
+    private LocalDate birthDate;
 }

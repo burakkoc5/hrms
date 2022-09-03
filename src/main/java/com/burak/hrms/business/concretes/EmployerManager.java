@@ -32,4 +32,13 @@ public class EmployerManager implements EmployerService {
         employerDao.save(employer);
         return new SuccessResult("İşlem başarılı");
     }
+    @Override
+    public DataResult<Employer> getByMail(String mail) {
+        return new SuccessDataResult<Employer>(employerDao.getEmployerByMail(mail),"Aday bulundu.");
+    }
+
+    @Override
+    public DataResult<Employer> getById(int id) {
+        return new SuccessDataResult<Employer>(employerDao.getEmployerById(id),"Aday bulundu.");
+    }
 }

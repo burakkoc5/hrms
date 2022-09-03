@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/coverLetters")
+@CrossOrigin
 public class CoverLettersController {
 
     private CoverLetterService coverLetterService;
